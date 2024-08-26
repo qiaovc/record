@@ -1,4 +1,4 @@
-package com.llfbandit.record.permission
+package com.qiaovc.record.permission
 
 import android.Manifest
 import android.app.Activity

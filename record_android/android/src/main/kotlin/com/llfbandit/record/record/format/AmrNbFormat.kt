@@ -1,11 +1,11 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaFormat
 import android.media.MediaMuxer
 import android.os.Build
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.IContainerWriter
-import com.llfbandit.record.record.container.MuxerContainer
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.IContainerWriter
+import com.qiaovc.record.record.container.MuxerContainer
 
 class AmrNbFormat : Format() {
     private val bitRates = intArrayOf(

@@ -1,4 +1,4 @@
-package com.llfbandit.example
+package com.qiaovc.example
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,4 @@
-package com.llfbandit.record.record.stream
+package com.qiaovc.record.record.stream
 
 import android.app.Activity
 import io.flutter.plugin.common.EventChannel

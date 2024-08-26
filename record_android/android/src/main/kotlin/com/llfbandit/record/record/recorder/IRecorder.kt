@@ -1,6 +1,6 @@
-package com.llfbandit.record.record.recorder
+package com.qiaovc.record.record.recorder
 
-import com.llfbandit.record.record.RecordConfig
+import com.qiaovc.record.record.RecordConfig
 
 interface IRecorder {
     @Throws(Exception::class)

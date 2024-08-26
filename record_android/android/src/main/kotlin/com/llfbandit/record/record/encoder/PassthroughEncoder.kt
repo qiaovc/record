@@ -1,9 +1,9 @@
-package com.llfbandit.record.record.encoder
+package com.qiaovc.record.record.encoder
 
 import android.media.MediaCodec
 import android.media.MediaFormat
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.format.Format
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.format.Format
 import java.nio.ByteBuffer
 
 /**

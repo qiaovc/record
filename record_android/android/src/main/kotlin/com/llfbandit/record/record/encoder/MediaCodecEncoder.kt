@@ -1,13 +1,13 @@
-package com.llfbandit.record.record.encoder
+package com.qiaovc.record.record.encoder
 
 import android.media.MediaCodec
 import android.media.MediaFormat
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Message
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.IContainerWriter
-import com.llfbandit.record.record.format.Format
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.IContainerWriter
+import com.qiaovc.record.record.format.Format
 import java.util.LinkedList
 import java.util.concurrent.Semaphore
 import java.util.concurrent.atomic.AtomicBoolean

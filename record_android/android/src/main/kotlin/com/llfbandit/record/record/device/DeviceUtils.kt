@@ -1,4 +1,4 @@
-package com.llfbandit.record.record.device
+package com.qiaovc.record.record.device
 
 import android.content.Context
 import android.media.AudioDeviceInfo

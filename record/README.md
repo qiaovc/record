@@ -77,7 +77,7 @@ record.dispose(); // As always, don't forget this one.
 ## Setup, permissions and others
 
 ### Android
-Follow [Gradle setup](https://github.com/llfbandit/record/blob/master/record_android/README.md) if needed.
+Follow [Gradle setup](https://github.com/qiaovc/record/blob/master/record_android/README.md) if needed.
 
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />

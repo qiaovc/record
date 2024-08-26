@@ -1,13 +1,13 @@
-package com.llfbandit.record.methodcall
+package com.qiaovc.record.methodcall
 
 import android.app.Activity
 import android.content.Context
-import com.llfbandit.record.Utils
-import com.llfbandit.record.permission.PermissionManager
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.bluetooth.BluetoothReceiver
-import com.llfbandit.record.record.device.DeviceUtils
-import com.llfbandit.record.record.format.AudioFormats
+import com.qiaovc.record.Utils
+import com.qiaovc.record.permission.PermissionManager
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.bluetooth.BluetoothReceiver
+import com.qiaovc.record.record.device.DeviceUtils
+import com.qiaovc.record.record.format.AudioFormats
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel

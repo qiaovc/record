@@ -1,16 +1,16 @@
-package com.llfbandit.record.methodcall
+package com.qiaovc.record.methodcall
 
 import android.app.Activity
 import android.content.Context
 import android.media.AudioDeviceInfo
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.bluetooth.BluetoothReceiver
-import com.llfbandit.record.record.bluetooth.BluetoothScoListener
-import com.llfbandit.record.record.recorder.AudioRecorder
-import com.llfbandit.record.record.recorder.IRecorder
-import com.llfbandit.record.record.recorder.MediaRecorder
-import com.llfbandit.record.record.stream.RecorderRecordStreamHandler
-import com.llfbandit.record.record.stream.RecorderStateStreamHandler
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.bluetooth.BluetoothReceiver
+import com.qiaovc.record.record.bluetooth.BluetoothScoListener
+import com.qiaovc.record.record.recorder.AudioRecorder
+import com.qiaovc.record.record.recorder.IRecorder
+import com.qiaovc.record.record.recorder.MediaRecorder
+import com.qiaovc.record.record.stream.RecorderRecordStreamHandler
+import com.qiaovc.record.record.stream.RecorderStateStreamHandler
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
@@ -21,8 +21,8 @@ internal class RecorderWrapper(
     messenger: BinaryMessenger
 ) : BluetoothScoListener {
     companion object {
-        const val EVENTS_STATE_CHANNEL = "com.llfbandit.record/events/"
-        const val EVENTS_RECORD_CHANNEL = "com.llfbandit.record/eventsRecord/"
+        const val EVENTS_STATE_CHANNEL = "com.qiaovc.record/events/"
+        const val EVENTS_RECORD_CHANNEL = "com.qiaovc.record/eventsRecord/"
     }
 
     private var eventChannel: EventChannel?

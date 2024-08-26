@@ -1,9 +1,9 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaFormat
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.IContainerWriter
-import com.llfbandit.record.record.container.RawContainer
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.IContainerWriter
+import com.qiaovc.record.record.container.RawContainer
 
 class PcmFormat : Format() {
     override val mimeTypeAudio: String = MediaFormat.MIMETYPE_AUDIO_RAW

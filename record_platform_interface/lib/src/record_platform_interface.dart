@@ -39,6 +39,8 @@ abstract class RecordPlatform extends PlatformInterface {
   /// Create a recorder
   Future<void> create(String recorderId);
 
+  Future<void> initRecorder(String recorderId, RecordConfig config,
+      {required String path});
   /// Starts new recording session.
   ///
   /// [path]: The output path file. Required on all IO platforms.

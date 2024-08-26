@@ -5,8 +5,8 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   private var audioRecorder: AVAudioRecorder?
   private var path: String?
 
-  func start(config: RecordConfig, path: String) throws {
-    try deleteFile(path: path)
+  func initRecorder(config: RecordConfig, path: String) throws {
+    // try deleteFile(path: path)
 
     try initAVAudioSession(config: config)
 
@@ -18,10 +18,29 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
     recorder.isMeteringEnabled = true
     recorder.prepareToRecord()
     
-    recorder.record()
+    // recorder.record()
     
     audioRecorder = recorder
     self.path = path
+  }
+
+  func start(config: RecordConfig, path: String) throws {
+    try deleteFile(path: path)
+
+    // try initAVAudioSession(config: config)
+
+    // let url = URL(fileURLWithPath: path)
+
+    // let recorder = try AVAudioRecorder(url: url, settings: getOutputSettings(config: config))
+
+    // recorder.delegate = self
+    // recorder.isMeteringEnabled = true
+    // recorder.prepareToRecord()
+    
+    recorder.record()
+    
+    // audioRecorder = recorder
+    // self.path = path
   }
 
   func stop(completionHandler: @escaping (String?) -> ()) {

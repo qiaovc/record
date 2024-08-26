@@ -1,9 +1,9 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaFormat
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.FlacContainer
-import com.llfbandit.record.record.container.IContainerWriter
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.FlacContainer
+import com.qiaovc.record.record.container.IContainerWriter
 
 class FlacFormat : Format() {
     private val sampleRates = intArrayOf(

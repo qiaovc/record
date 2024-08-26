@@ -30,7 +30,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.llfbandit.record_example"
+        applicationId "com.qiaovc.record_example"
         minSdkVersion 23
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
@@ -44,7 +44,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
-    namespace 'com.llfbandit.record_example'
+    namespace 'com.qiaovc.record_example'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17

@@ -1,8 +1,8 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaCodecList
 import android.media.MediaFormat
-import com.llfbandit.record.record.AudioEncoder
+import com.qiaovc.record.record.AudioEncoder
 
 object AudioFormats {
     fun isEncoderSupported(mimeType: String?): Boolean {

@@ -1,13 +1,13 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaCodecInfo
 import android.media.MediaFormat
 import android.media.MediaMuxer
-import com.llfbandit.record.record.AudioEncoder
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.AdtsContainer
-import com.llfbandit.record.record.container.IContainerWriter
-import com.llfbandit.record.record.container.MuxerContainer
+import com.qiaovc.record.record.AudioEncoder
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.AdtsContainer
+import com.qiaovc.record.record.container.IContainerWriter
+import com.qiaovc.record.record.container.MuxerContainer
 
 class AacFormat : Format() {
     override val mimeTypeAudio: String = MediaFormat.MIMETYPE_AUDIO_AAC

@@ -1,4 +1,4 @@
-package com.llfbandit.record.record
+package com.qiaovc.record.record
 
 import android.annotation.SuppressLint
 import android.media.AudioFormat

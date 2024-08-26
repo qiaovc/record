@@ -40,6 +40,19 @@ class AudioRecorder {
     return true;
   }
 
+  Future<void> initRecorder(
+    RecordConfig config, {
+    required String path,
+  }) async {
+    await _safeCall(
+      () async {
+        _created ??= await _create();
+        await RecordPlatform.instance.initRecorder(_recorderId, config, path: path);
+      },
+    );
+    _startAmplitudeTimer();
+  }
+
   /// Starts new recording session.
   ///
   /// [path]: The output path file. Required on all IO platforms.

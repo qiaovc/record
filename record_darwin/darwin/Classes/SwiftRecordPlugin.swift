@@ -17,7 +17,7 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin {
     let binaryMessenger = registrar.messenger
 #endif
     
-    let methodChannel = FlutterMethodChannel(name: "com.llfbandit.record/messages", binaryMessenger: binaryMessenger)
+    let methodChannel = FlutterMethodChannel(name: "com.qiaovc.record/messages", binaryMessenger: binaryMessenger)
     
     let instance = SwiftRecordPlugin(binaryMessenger: binaryMessenger)
     
@@ -69,6 +69,25 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin {
     }
     
     switch call.method {
+    case "initRecorder":
+      guard let path = args["path"] as? String else  {
+        result(FlutterError(code: "record", message: "Call missing mandatory parameter path.", details: nil))
+        return
+      }
+      
+      guard let config = getConfig(args, result: result) else {
+        return
+      }
+      
+      do {
+        // try recorder.start(config: config, path: path)
+        try recorder.initRecorder(config: config, path: path)
+        result(nil)
+      } catch RecorderError.error(let message, let details) {
+        result(FlutterError(code: "record", message: message, details: details))
+      } catch {
+        result(FlutterError(code: "record", message: error.localizedDescription, details: nil))
+      }
     case "start":
       guard let path = args["path"] as? String else  {
         result(FlutterError(code: "record", message: "Call missing mandatory parameter path.", details: nil))
@@ -200,11 +219,11 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin {
   }
   
   private func createRecorder(recorderId: String) {
-    let stateEventChannel = FlutterEventChannel(name: "com.llfbandit.record/events/\(recorderId)", binaryMessenger: m_binaryMessenger)
+    let stateEventChannel = FlutterEventChannel(name: "com.qiaovc.record/events/\(recorderId)", binaryMessenger: m_binaryMessenger)
     let stateEventHandler = StateStreamHandler()
     stateEventChannel.setStreamHandler(stateEventHandler)
     
-    let recordEventChannel = FlutterEventChannel(name: "com.llfbandit.record/eventsRecord/\(recorderId)", binaryMessenger: m_binaryMessenger)
+    let recordEventChannel = FlutterEventChannel(name: "com.qiaovc.record/eventsRecord/\(recorderId)", binaryMessenger: m_binaryMessenger)
     let recordEventHandler = RecordStreamHandler()
     recordEventChannel.setStreamHandler(recordEventHandler)
     

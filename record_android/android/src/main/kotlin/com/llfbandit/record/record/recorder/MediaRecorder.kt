@@ -1,15 +1,15 @@
-package com.llfbandit.record.record.recorder
+package com.qiaovc.record.record.recorder
 
 import android.content.Context
 import android.media.MediaRecorder
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
-import com.llfbandit.record.Utils
-import com.llfbandit.record.record.AudioEncoder
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.RecordState
-import com.llfbandit.record.record.stream.RecorderStateStreamHandler
+import com.qiaovc.record.Utils
+import com.qiaovc.record.record.AudioEncoder
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.RecordState
+import com.qiaovc.record.record.stream.RecorderStateStreamHandler
 import java.io.IOException
 import kotlin.math.log10
 

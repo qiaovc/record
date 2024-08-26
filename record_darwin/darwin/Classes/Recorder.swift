@@ -18,6 +18,26 @@ class Recorder {
   func dispose() {
     stop(completionHandler: {(path) -> () in })
   }
+
+  func initRecorder(config: RecordConfig, path: String) throws {
+    // stop(completionHandler: {(path) -> () in })
+    
+    // if !isEncoderSupported(config.encoder) {
+    //   throw RecorderError.error(
+    //     message: "Failed to start recording",
+    //     details: "\(config.encoder) not supported."
+    //   )
+    // }
+    
+    let delegate = RecorderFileDelegate()
+    
+    // try delegate.start(config: config, path: path)
+    try delegate.initRecorder(config: config, path: path)
+    
+    self.delegate = delegate
+    
+    // updateState(RecordState.record)
+  }
   
   func start(config: RecordConfig, path: String) throws {
     stop(completionHandler: {(path) -> () in })
@@ -29,11 +49,11 @@ class Recorder {
       )
     }
     
-    let delegate = RecorderFileDelegate()
+    // let delegate = RecorderFileDelegate()
     
     try delegate.start(config: config, path: path)
     
-    self.delegate = delegate
+    // self.delegate = delegate
     
     updateState(RecordState.record)
   }

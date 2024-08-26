@@ -1,16 +1,16 @@
-package com.llfbandit.record.record.format
+package com.qiaovc.record.record.format
 
 import android.media.MediaCodecInfo
 import android.media.MediaCodecList
 import android.media.MediaFormat
 import android.util.Log
 import android.util.Range
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.container.IContainerWriter
-import com.llfbandit.record.record.encoder.EncoderListener
-import com.llfbandit.record.record.encoder.IEncoder
-import com.llfbandit.record.record.encoder.MediaCodecEncoder
-import com.llfbandit.record.record.encoder.PassthroughEncoder
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.container.IContainerWriter
+import com.qiaovc.record.record.encoder.EncoderListener
+import com.qiaovc.record.record.encoder.IEncoder
+import com.qiaovc.record.record.encoder.MediaCodecEncoder
+import com.qiaovc.record.record.encoder.PassthroughEncoder
 import kotlin.math.abs
 
 

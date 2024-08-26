@@ -1,7 +1,7 @@
 name: record_android
 description: Android specific implementation for record package called by record_platform_interface.
 version: 1.2.6
-homepage: https://github.com/llfbandit/record/tree/master/record_android
+homepage: https://github.com/qiaovc/record/tree/master/record_android
 
 environment:
   sdk: ^3.3.0
@@ -18,5 +18,5 @@ flutter:
     implements: record
     platforms:
       android:
-        package: com.llfbandit.record
+        package: com.qiaovc.record
         pluginClass: RecordPlugin

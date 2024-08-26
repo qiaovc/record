@@ -1,4 +1,4 @@
-package com.llfbandit.record_example;
+package com.qiaovc.record_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

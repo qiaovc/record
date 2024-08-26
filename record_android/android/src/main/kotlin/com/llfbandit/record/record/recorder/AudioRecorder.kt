@@ -1,12 +1,12 @@
-package com.llfbandit.record.record.recorder
+package com.qiaovc.record.record.recorder
 
 import android.content.Context
 import android.media.AudioManager
 import android.util.Log
-import com.llfbandit.record.record.RecordConfig
-import com.llfbandit.record.record.RecordState
-import com.llfbandit.record.record.stream.RecorderRecordStreamHandler
-import com.llfbandit.record.record.stream.RecorderStateStreamHandler
+import com.qiaovc.record.record.RecordConfig
+import com.qiaovc.record.record.RecordState
+import com.qiaovc.record.record.stream.RecorderRecordStreamHandler
+import com.qiaovc.record.record.stream.RecorderStateStreamHandler
 
 interface OnAudioRecordListener {
     fun onRecord()

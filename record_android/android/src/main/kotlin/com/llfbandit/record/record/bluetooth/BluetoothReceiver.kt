@@ -1,4 +1,4 @@
-package com.llfbandit.record.record.bluetooth
+package com.qiaovc.record.record.bluetooth
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -7,7 +7,7 @@ import android.content.IntentFilter
 import android.media.AudioDeviceCallback
 import android.media.AudioDeviceInfo
 import android.media.AudioManager
-import com.llfbandit.record.record.device.DeviceUtils
+import com.qiaovc.record.record.device.DeviceUtils
 
 interface BluetoothScoListener {
     fun onBlScoConnected()

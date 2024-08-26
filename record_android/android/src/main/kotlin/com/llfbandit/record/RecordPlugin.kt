@@ -1,7 +1,7 @@
-package com.llfbandit.record
+package com.qiaovc.record
 
-import com.llfbandit.record.methodcall.MethodCallHandlerImpl
-import com.llfbandit.record.permission.PermissionManager
+import com.qiaovc.record.methodcall.MethodCallHandlerImpl
+import com.qiaovc.record.permission.PermissionManager
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -83,6 +83,6 @@ class RecordPlugin : FlutterPlugin, ActivityAware {
     }
 
     companion object {
-        const val MESSAGES_CHANNEL = "com.llfbandit.record/messages"
+        const val MESSAGES_CHANNEL = "com.qiaovc.record/messages"
     }
 }
