@@ -60,7 +60,7 @@ class RecordMethodChannel extends RecordPlatform {
     );
   }
 
-   @override
+  @override
   Future<void> initRecorder(String recorderId, RecordConfig config, {required String path}) {
     return _methodChannel.invokeMethod('initRecorder', {
       'recorderId': recorderId,

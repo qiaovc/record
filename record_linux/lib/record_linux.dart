@@ -80,6 +80,13 @@ class RecordLinux extends RecordPlatform {
     }
   }
 
+
+  @override
+  Future<void> initRecorder(String recorderId, RecordConfig config, {required String path}) async {
+    // throw UnimplementedError();
+    return;
+  }
+
   @override
   Future<void> start(
     String recorderId,

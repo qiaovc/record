@@ -113,4 +113,9 @@ class RecordPluginWebWrapper extends RecordPlatform {
 
     return recorder;
   }
+  
+  @override
+  Future<void> initRecorder(String recorderId, RecordConfig config, {required String path}) async {
+    return;
+  }
 }
