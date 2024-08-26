@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,8 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
   StreamSubscription<Amplitude>? _amplitudeSub;
   Amplitude? _amplitude;
 
+  String absPath = '';
+
   @override
   void initState() {
     _audioRecorder = AudioRecorder();
@@ -47,7 +50,9 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
     const encoder = AudioEncoder.aacLc;
     const config = RecordConfig(encoder: encoder, numChannels: 1);
     final path = await getApplicationDocumentsDirectory();
-    _audioRecorder.initRecorder(config, path: p.join(path.path, 'a.m4a') );
+    await Directory(p.join(path.path, 'audio')).create(recursive: true);
+    absPath = p.join(path.path, 'audio', '${DateTime.now().millisecondsSinceEpoch}.m4a');
+    _audioRecorder.initRecorder(config, path: absPath);
 
   }
 

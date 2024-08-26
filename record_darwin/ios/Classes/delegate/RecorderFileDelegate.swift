@@ -6,7 +6,7 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   private var path: String?
 
   func initRecorder(config: RecordConfig, path: String) throws {
-    // try deleteFile(path: path)
+    try deleteFile(path: path)
 
     try initAVAudioSession(config: config)
 
@@ -25,7 +25,7 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   }
 
   func start(config: RecordConfig, path: String) throws {
-    try deleteFile(path: path)
+    // try deleteFile(path: path)
 
     // try initAVAudioSession(config: config)
 
