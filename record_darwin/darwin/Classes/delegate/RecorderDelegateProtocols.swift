@@ -21,9 +21,11 @@ public protocol AudioRecordingDelegate {
 }
 
 public protocol AudioRecordingFileDelegate: AudioRecordingDelegate {
+  func initRecorder(config: RecordConfig, path: String) throws
   func start(config: RecordConfig, path: String) throws
 }
 
 public protocol AudioRecordingStreamDelegate: AudioRecordingDelegate {
+  // func initRecorder(config: RecordConfig, recordEventHandler: RecordStreamHandler) throws
   func start(config: RecordConfig, recordEventHandler: RecordStreamHandler) throws
 }

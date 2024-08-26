@@ -7,9 +7,9 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVCaptureFileO
   private var path: String?
   private var amplitude:Float = -160.0
   private var stopCb: ((String?) -> ())?
-  
-  func start(config: RecordConfig, path: String) throws {
-    try deleteFile(path: path)
+
+  func initRecorder(config: RecordConfig, path: String) throws {
+    // try deleteFile(path: path)
     
     let audioSession = AVCaptureSession()
     
@@ -47,15 +47,65 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVCaptureFileO
     
     audioSession.startRunning()
 
-    audioOutput.startRecording(
+    // audioOutput.startRecording(
+    //   to: URL(fileURLWithPath: path),
+    //   outputFileType: getFileTypeFromSettings(outputSettings),
+    //   recordingDelegate: self
+    // )
+    
+    self.audioOutput = audioOutput
+    self.audioSession = audioSession
+    self.path = path
+  }
+  
+  func start(config: RecordConfig, path: String) throws {
+    try deleteFile(path: path)
+    
+    // let audioSession = AVCaptureSession()
+    
+    // let dev: AVCaptureInput?
+    // do {
+    //   dev = try getInputDevice(device: config.device)
+    // } catch {
+    //   throw RecorderError.error(message: "Failed to start recording", details: "\(error)")
+    // }
+  
+    // guard let dev = dev else {
+    //   throw RecorderError.error(
+    //     message: "Failed to start recording",
+    //     details: "Input device not found from available list."
+    //   )
+    // }
+    // guard audioSession.canAddInput(dev) else {
+    //   throw RecorderError.error(
+    //     message: "Failed to start recording",
+    //     details: "Input device cannot be added to the capture session."
+    //   )
+    // }
+    
+    // audioSession.beginConfiguration()
+
+    // // Add input device
+    // audioSession.addInput(dev)
+    // // Add output
+    // let outputSettings = try getOutputSettings(config: config)
+    // let audioOutput = AVCaptureAudioFileOutput()
+    // audioOutput.audioSettings = outputSettings
+    // audioSession.addOutput(audioOutput)
+    
+    // audioSession.commitConfiguration()
+    
+    // audioSession.startRunning()
+
+    audioOutput?.startRecording(
       to: URL(fileURLWithPath: path),
       outputFileType: getFileTypeFromSettings(outputSettings),
       recordingDelegate: self
     )
     
-    self.audioOutput = audioOutput
-    self.audioSession = audioSession
-    self.path = path
+    // self.audioOutput = audioOutput
+    // self.audioSession = audioSession
+    // self.path = path
   }
   
   func stop(completionHandler: @escaping (String?) -> ()) {

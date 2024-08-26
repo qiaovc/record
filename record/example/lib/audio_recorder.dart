@@ -27,7 +27,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
   @override
   void initState() {
     _audioRecorder = AudioRecorder();
-
+    
     _recordSub = _audioRecorder.onStateChanged().listen((recordState) {
       _updateRecordState(recordState);
     });
@@ -60,7 +60,6 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
 
         // Record to stream
         // await recordStream(_audioRecorder, config);
-
         _recordDuration = 0;
 
         _startTimer();

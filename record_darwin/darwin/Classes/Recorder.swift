@@ -50,8 +50,7 @@ class Recorder {
     }
     
     // let delegate = RecorderFileDelegate()
-    
-    try delegate.start(config: config, path: path)
+    try (delegate as? RecorderFileDelegate)?.start(config: config, path: path)
     
     // self.delegate = delegate
     
