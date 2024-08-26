@@ -50,7 +50,7 @@ class AudioRecorder {
         await RecordPlatform.instance.initRecorder(_recorderId, config, path: path);
       },
     );
-    _startAmplitudeTimer();
+    // _startAmplitudeTimer();
   }
 
   /// Starts new recording session.

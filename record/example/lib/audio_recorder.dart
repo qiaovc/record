@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 
 import 'platform/audio_recorder_platform.dart';
@@ -27,7 +29,6 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
   @override
   void initState() {
     _audioRecorder = AudioRecorder();
-    
     _recordSub = _audioRecorder.onStateChanged().listen((recordState) {
       _updateRecordState(recordState);
     });
@@ -38,7 +39,16 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
       setState(() => _amplitude = amp);
     });
 
+    initrecord();
     super.initState();
+  }
+
+  initrecord() async {
+    const encoder = AudioEncoder.aacLc;
+    const config = RecordConfig(encoder: encoder, numChannels: 1);
+    final path = await getApplicationDocumentsDirectory();
+    _audioRecorder.initRecorder(config, path: p.join(path.path, 'a.m4a') );
+
   }
 
   Future<void> _start() async {
@@ -54,7 +64,7 @@ class _RecorderState extends State<Recorder> with AudioRecorderMixin {
         debugPrint(devs.toString());
 
         const config = RecordConfig(encoder: encoder, numChannels: 1);
-
+        
         // Record to file
         await recordFile(_audioRecorder, config);
 
