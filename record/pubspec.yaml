@@ -15,9 +15,9 @@ dependencies:
   uuid: ">=3.0.7 <5.0.0"
 
   record_platform_interface: ^1.1.1
-  # record_web: ^1.0.4
-  # record_windows: ^1.0.2
-  # record_linux: '>=0.5.0 <1.0.0'
+  record_web: ^1.0.4
+  record_windows: ^1.0.2
+  record_linux: '>=0.5.0 <1.0.0'
   record_android: ^1.2.3
   record_darwin: ^1.1.2
 
@@ -33,11 +33,11 @@ flutter:
         default_package: record_android
       ios:
         default_package: record_darwin
-      # web:
-      #   default_package: record_web
-      # windows:
-      #   default_package: record_windows
-      # macos:
-      #   default_package: record_darwin
-      # linux:
-      #   default_package: record_linux
+      web:
+        default_package: record_web
+      windows:
+        default_package: record_windows
+      macos:
+        default_package: record_darwin
+      linux:
+        default_package: record_linux
