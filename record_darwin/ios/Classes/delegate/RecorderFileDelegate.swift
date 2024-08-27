@@ -25,6 +25,7 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   }
 
   func start(config: RecordConfig, path: String) throws {
+    AudioServicesDisposeSystemSoundID(1113)
     // try deleteFile(path: path)
 
     // try initAVAudioSession(config: config)
@@ -46,7 +47,9 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   func stop(completionHandler: @escaping (String?) -> ()) {
     audioRecorder?.stop()
     audioRecorder = nil
-
+    DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: {
+      AudioServicesPlaySystemSound(1114)
+    })
     completionHandler(path)
     
     path = nil
