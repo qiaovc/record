@@ -25,7 +25,11 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   }
 
   func start(config: RecordConfig, path: String) throws {
-    AudioServicesPlaySystemSound(1113)
+    
+    AudioServicesPlaySystemSoundWithCompletion(1113) {
+      audioRecorder?.record()
+    }
+
     // try deleteFile(path: path)
 
     // try initAVAudioSession(config: config)
@@ -38,8 +42,6 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
     // recorder.isMeteringEnabled = true
     // recorder.prepareToRecord()
     
-    audioRecorder?.record()
-    
     // audioRecorder = recorder
     // self.path = path
   }
@@ -49,7 +51,6 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
     audioRecorder = nil
     AudioServicesPlaySystemSound(1114)
     completionHandler(path)
-    
     path = nil
   }
   
