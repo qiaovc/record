@@ -27,7 +27,7 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
   func start(config: RecordConfig, path: String) throws {
     
     AudioServicesPlaySystemSoundWithCompletion(1113) {
-      audioRecorder?.record()
+      self.audioRecorder?.record()
     }
 
     // try deleteFile(path: path)
