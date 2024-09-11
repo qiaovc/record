@@ -16,10 +16,7 @@ class RecorderFileDelegate: NSObject, AudioRecordingFileDelegate, AVAudioRecorde
 
     recorder.delegate = self
     recorder.isMeteringEnabled = true
-    recorder.prepareToRecord()
-    
-    // recorder.record()
-    
+
     audioRecorder = recorder
     self.path = path
   }
